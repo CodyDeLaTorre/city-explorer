@@ -19,7 +19,8 @@ Building this project at Code Fellows to leanr understand the process of using A
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+background image: https://unsplash.com/photos/AFB6S2kibuk
 
 Name of feature: ________________________________
 

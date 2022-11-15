@@ -1,7 +1,52 @@
 body {
+background-image: url(./img/bg.jpg);
+height:75vw;
+width: 100%;
+overflow: hidden;
+}
 
+#root{
+  background-color: rgba(128, 126, 126, 0.7);
+  height: 100%;
+  width: 100%;
+}
+
+header{
+  font-weight: 900;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 90%;
+  margin: auto;
+  padding: 10px auto;
+  text-align: center;
+}
+
+h1{
+  color: rgb(0, 0, 0);
 }
 
 Main{
-  
+  width: 100%;
+  margin: auto;
+  height:100%;
+}
+
+form{
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+label{
+  margin: 10px 10px;
+}
+
+.card {
+  width: 50%;
+  margin: auto;
+}
+
+button{
+
 }
