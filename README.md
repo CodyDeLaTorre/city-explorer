@@ -20,7 +20,7 @@ Building this project at Code Fellows to leanr understand the process of using A
 
 ## Credit and Collaborations
 
-background image: https://unsplash.com/photos/AFB6S2kibuk
+[background image](https://unsplash.com/photos/AFB6S2kibuk)
 
 Name of feature: Lab6
 
