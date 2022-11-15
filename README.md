@@ -22,12 +22,14 @@ Building this project at Code Fellows to leanr understand the process of using A
 
 background image: https://unsplash.com/photos/AFB6S2kibuk
 
-Name of feature: ________________________________
+Name of feature: Lab6
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hours
 
-Start time: _____
+Start time: 5:00pm
 
-Finish time: _____
+Finish time: 9:00pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 4 hours
+
+![layout](./src/img/dataflow.png)
