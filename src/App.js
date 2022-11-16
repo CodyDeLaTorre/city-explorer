@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button';
+import Weather from './components/Weather'
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
@@ -13,8 +14,17 @@ class App extends React.Component {
       city: '',
       cityData: {},
       errorMessage: '',
-      isError: false
+      isError: false,
+      weatherData: []
     }
+  }
+
+  handleWeather = async () => {
+    let url = `${process.env.REACT_APP_SERVER}/weather?place=${this.state.city}`
+    let weatherData = await axios.get(url);
+    this.setState({
+      weatherData: weatherData.data
+    })
   }
 
   handleInput = (event) => {
@@ -31,6 +41,7 @@ class App extends React.Component {
       this.setState({
         cityData: location.data[0],
       });
+      this.handleWeather();
     } catch (error) {
       this.setState({
         errorMessage: error.message,
@@ -44,7 +55,6 @@ class App extends React.Component {
     let lat = this.state.cityData.lat;
     let lon = this.state.cityData.lon;
     let locImage = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
-
     return (
     <>
         <header><h1>City Locator</h1></header>
@@ -63,9 +73,10 @@ class App extends React.Component {
             : 
              <div>
              <Card style={{ width: '33rem' }}>
-               <Card.Img src={locImage}></Card.Img>
+               {this.state.cityData.display_name &&<Card.Img src={locImage}></Card.Img>} 
                <Card.Title>{displayName}</Card.Title>
-               <Card.Text>Latitude: {lat} & Longitude: {lon}</Card.Text>
+               {this.state.weatherData.length > 0 &&<Weather weatherData={this.state.weatherData}/>}
+               <Card.Text></Card.Text>
              </Card>
            </div> 
           }
