@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 class Weather extends React.Component {
   render (){
     return (
-     <Card.Text>
+     <Card.Body>
       <ul>Weather Data
         <li>Date: {this.props.weatherData[0].date}</li>
         <li>Description: {this.props.weatherData[0].description}</li>
@@ -14,7 +14,7 @@ class Weather extends React.Component {
         <li>Date: {this.props.weatherData[2].date}</li>
         <li>Description: {this.props.weatherData[2].description}</li>
       </ul>
-     </Card.Text>
+     </Card.Body>
     )
   }
 }

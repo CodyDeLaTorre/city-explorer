@@ -22,7 +22,7 @@ class App extends React.Component {
 
   handleWeather = async () => {
     try {
-    let url = `${process.env.REACT_APP_SERVER}/weather?place=${this.state.city}`
+    let url = `${process.env.REACT_APP_SERVER}/weather?place=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`
     let weatherData = await axios.get(url);
     this.setState({
       weatherData: weatherData.data,
@@ -49,8 +49,7 @@ class App extends React.Component {
       let location = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`);
       this.setState({
         cityData: location.data[0],
-      });
-      this.handleWeather();
+      },this.handleWeather);
     } catch (error) {
       this.setState({
         errorMessage: error.message,
@@ -85,7 +84,6 @@ class App extends React.Component {
                {this.state.cityData.display_name &&<Card.Img src={locImage}></Card.Img>} 
                <Card.Title>{displayName}</Card.Title>
                {this.state.weatherData.length > 0 &&<Weather weatherData={this.state.weatherData}/>}
-               <Card.Text></Card.Text>
              </Card>
            </div> 
           }
