@@ -15,16 +15,25 @@ class App extends React.Component {
       cityData: {},
       errorMessage: '',
       isError: false,
-      weatherData: []
+      weatherData: [],
+      isWeather: false
     }
   }
 
   handleWeather = async () => {
+    try {
     let url = `${process.env.REACT_APP_SERVER}/weather?place=${this.state.city}`
     let weatherData = await axios.get(url);
     this.setState({
-      weatherData: weatherData.data
-    })
+      weatherData: weatherData.data,
+      isWeather: true
+    }) } catch (error) {
+      this.setState({
+        errorMessage: error.message,
+        isError: true,
+        isWeather: false
+      })
+    }
   }
 
   handleInput = (event) => {
