@@ -33,3 +33,5 @@ Finish time: 9:00pm
 Actual time needed to complete: 4 hours
 
 ![layout](./src/img/dataflow.png)
+
+![layout4](./src/img/Workflow4.png)
