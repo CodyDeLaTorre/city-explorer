@@ -46,3 +46,26 @@ label{
   width: 50%;
   margin: auto;
 }
+
+#map{
+  text-align: center;
+}
+
+#movie{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movies{
+  margin: 5px 5px;
+}
+
+ul {
+  font-weight: 600;
+  list-style: none;
+}
+
+label{
+  font-weight: 700;
+}
