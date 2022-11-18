@@ -84,7 +84,6 @@ class App extends React.Component {
     let lat = this.state.cityData.lat;
     let lon = this.state.cityData.lon;
     let locImage = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
-    console.log(this.state);
     return (
       <>
         <header><h1>City Locator</h1></header>
@@ -94,7 +93,7 @@ class App extends React.Component {
               <Form.Control name="city" type="text" placeholder="'Seattle', 'Los Angeles'" onChange={this.handleInput}>
               </Form.Control>
             </Form.Label>
-            <Button type="submit">Explore!</Button>
+            <Button variant ="secondary" type="submit">Explore!</Button>
           </Form>
           {
             this.state.isError ?
@@ -103,12 +102,12 @@ class App extends React.Component {
               :
               <div>
                 <section id='map'>
-                  <Card style={{ width: '33rem' }}>
+                  {this.state.cityData.display_name && <Card style={{ width: '33rem' }}>
                     {this.state.cityData.display_name && <Card.Img src={locImage}></Card.Img>}
                     <Card.Title>{displayName}</Card.Title>
                     {this.state.weatherData.length > 0 && <Weather weatherData={this.state.weatherData} />}
-                    {this.state.weatherData.length > 0 && <Button onClick={this.handleMovies}>Movies set in this location</Button>}
-                  </Card>
+                    {this.state.weatherData.length > 0 && <Button variant ="secondary" onClick={this.handleMovies}>Movies set in this location</Button>}
+                  </Card>}
                 </section>
                 <section id='movie'>
                 {this.state.movieData.length > 0 && <Movies movieData={this.state.movieData} />}
