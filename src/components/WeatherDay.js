@@ -4,8 +4,8 @@ class WeatherDay extends React.Component {
   render() {
     return (
       <>
-        <li>Date: {this.props.date}</li>
-        <li>{this.props.description}</li>
+        <li>Date: {this.props.day.time}</li>
+        <li>{this.props.day.forecast}</li>
       </>
     )
   }

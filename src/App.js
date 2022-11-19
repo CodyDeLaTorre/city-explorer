@@ -84,6 +84,7 @@ class App extends React.Component {
     let lat = this.state.cityData.lat;
     let lon = this.state.cityData.lon;
     let locImage = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
+    console.log(this.state.weatherData);
     return (
       <>
         <header><h1>City Locator</h1></header>
